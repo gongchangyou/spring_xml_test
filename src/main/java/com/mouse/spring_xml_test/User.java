@@ -1,5 +1,7 @@
 package com.mouse.spring_xml_test;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author gongchangyou
  * @version 1.0
