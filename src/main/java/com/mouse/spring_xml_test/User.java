@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  * @date 2022/7/25 16:21
  */
+//@Component 这里不能再注册了，会报错，
 public class User {
 
     private Long id;
