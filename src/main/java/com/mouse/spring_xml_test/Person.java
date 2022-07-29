@@ -6,4 +6,5 @@ package com.mouse.spring_xml_test;
  * @date 2022/7/29 15:33
  */
 public interface Person {
+    public Long getId();
 }

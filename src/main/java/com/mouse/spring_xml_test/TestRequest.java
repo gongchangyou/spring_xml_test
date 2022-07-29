@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * @author gongchangyou
@@ -24,6 +27,12 @@ import java.util.List;
 public class TestRequest {
     @Autowired
     List<Person> userList;
+
+    Map<Long, Person> userMap ;
+    @PostConstruct
+    void init() {
+         userMap = userList.stream().collect(Collectors.toMap(Person::getId, Function.identity()));
+    }
 
     @RequestMapping("hi")
     String hi() {

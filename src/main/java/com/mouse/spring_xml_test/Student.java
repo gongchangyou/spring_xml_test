@@ -13,9 +13,10 @@ import org.springframework.stereotype.Component;
 @Order(2)
 public class Student implements Person {
 
-    private Long id;
+    private Long id = 3L;
     private String name;
 
+    @Override
     public Long getId() {
         return id;
     }
