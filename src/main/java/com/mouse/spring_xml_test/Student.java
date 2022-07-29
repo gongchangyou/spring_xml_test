@@ -1,16 +1,17 @@
 package com.mouse.spring_xml_test;
 
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-
 /**
  * @author gongchangyou
  * @version 1.0
  * @date 2022/7/25 16:21
  */
-//@Component 这里不能再注册了，会报错，
-@Order(1)
-public class User implements Person {
+
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
+@Component
+@Order(2)
+public class Student implements Person {
 
     private Long id;
     private String name;

@@ -1,11 +1,17 @@
 package com.mouse.spring_xml_test;
 
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author gongchangyou
@@ -17,11 +23,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class TestRequest {
     @Autowired
-    User user;
+    List<Person> userList;
 
     @RequestMapping("hi")
     String hi() {
-        log.info("user {}", user);
+        log.info("user {}", userList);
         return "hi";
     }
 }
