@@ -16,14 +16,17 @@ public class SpringXmlTestApplication {
 
     public static void main(String[] args) {
 
-//        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-//
-//        // 获取Bean实例 user是个单例
-//        val user = context.getBean("user", User.class);
-//        user.setId(123L);
-//        log.info("user {}", user);
-//        val user1 = context.getBean("user", User.class);
-//        log.info("user {}", user1);
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+
+        // 获取Bean实例 user是个单例
+        val user = context.getBean("user", User.class);
+        user.setId(123L);
+        log.info("user {}", user);
+        val user1 = context.getBean("user", User.class);
+        log.info("user {}", user1);
+        val clazz = context.getBean("class", Clazz.class);
+        log.info("clazz {}", clazz);
+
         SpringApplication.run(SpringXmlTestApplication.class, args);
 
     }

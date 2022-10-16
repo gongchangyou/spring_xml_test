@@ -3,5 +3,32 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        >
-    <bean id="user" class="com.mouse.spring_xml_test.User"></bean>
+    <bean id="face" class="com.mouse.spring_xml_test.Face">
+    </bean>
+    <bean id="user" class="com.mouse.spring_xml_test.User">
+        <property name="name" value="zzz" />
+        <property name="face" ref="face" />
+        <property name="dreams">
+            <map>
+                <entry key="a">
+                    <value> "abc"</value>
+                </entry>
+                <entry key="z">
+                    <value> "xyz"</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="class" class="com.mouse.spring_xml_test.Clazz">
+        <property name="user">
+            <bean id="user" class="com.mouse.spring_xml_test.User">
+                <property name="name" value="zzz" />
+                <property name="face" ref="face" />
+
+            </bean>
+        </property>
+
+    </bean>
+
+
 </beans>

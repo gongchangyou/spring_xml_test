@@ -1,7 +1,10 @@
 package com.mouse.spring_xml_test;
 
+import lombok.Data;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
+import java.util.Map;
 
 /**
  * @author gongchangyou
@@ -10,10 +13,13 @@ import org.springframework.stereotype.Component;
  */
 //@Component 这里不能再注册了，会报错，
 @Order(1)
+@Data
 public class User implements Person {
 
-    private Long id = 4L;
+    private Face face;
+    private Long id = 40L;
     private String name;
+    private Map<String, String> dreams;
 
     @Override
     public Long getId() {

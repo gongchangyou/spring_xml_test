@@ -1,4 +1,4 @@
-package com.mouse.spring_xml_test;
+package com.mouse.spring_xml_test.override;
 
 /**
  * @author gongchangyou
@@ -6,18 +6,21 @@ package com.mouse.spring_xml_test;
  * @date 2022/7/25 16:21
  */
 
+import com.mouse.spring_xml_test.Face;
+import com.mouse.spring_xml_test.Person;
+import com.mouse.spring_xml_test.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("stu1")
 @Order(2)
-public class Student implements Person {
+public class Student1 extends Student {
 
     @Autowired
     Face face;
 
-    private Long id = 3L;
+    private Long id = 4L;
     private String name;
 
     @Override
